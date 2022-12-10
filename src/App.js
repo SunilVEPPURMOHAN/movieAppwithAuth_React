@@ -11,14 +11,7 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 
 function App() {
   return (<>
-      <Row><Col>
-    <h1>Your Movie App</h1>
-
-          <section id="navigation">
-            <a href="/">Login</a>
-            <a href="/free">Free Component</a>
-            <a href="/auth">Auth Component</a>
-          </section></Col></Row>
+ 
     <Routes>
       <Route path='/' element={<Login/>}/>
       <Route path='/signup' element={<Register/>}/>

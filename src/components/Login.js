@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Container, Row } from "react-bootstrap";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import Navbar from "./Navbar";
 
 const cookies = new Cookies();
 
@@ -47,9 +48,9 @@ export default function Login(){
     return(
 
         <>
+        <Navbar/>
         <Container>
           <Row>
-        <h2>Login</h2>
       <Form onSubmit={(e)=>handleSubmit(e)}>
         {/* email */}
         <Form.Group controlId="formBasicEmail">
