@@ -3,6 +3,7 @@ import { Form, Button, Container, Row } from "react-bootstrap";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 const cookies = new Cookies();
 
@@ -12,6 +13,7 @@ export default function Login(){
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const navigate = useNavigate();
 
    const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
@@ -33,9 +35,9 @@ export default function Login(){
         cookies.set("TOKEN", result.data.token, { path: "/", secure: true, sameSite: 'none'});
 
           console.log(result.data.token)
-
+        navigate("/auth");
            // redirect user to the auth page
-        window.location.href = "/auth";
+        // window.location.href = "/auth";
         // setStatus(result.data.msg);
         // setTimeout(4000);
     })
@@ -46,7 +48,6 @@ export default function Login(){
   }
 
     return(
-
         <>
         <Navbar/>
         <Container>

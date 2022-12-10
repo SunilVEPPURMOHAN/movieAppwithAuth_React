@@ -11,6 +11,9 @@ Login
 Register
 </Link>
 <Link to="/free" style={{ padding: "10px" }}>
+Free
+ </Link>
+ <Link to="/auth" style={{ padding: "10px" }}>
 Auth
  </Link>
 </nav></>
