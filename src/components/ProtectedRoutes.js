@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
 import Cookies from "universal-cookie";
-import Login from "./Login";
+// import Login from "./Login";
 const cookies = new Cookies();
 
 // receives component and any other props represented by ...rest

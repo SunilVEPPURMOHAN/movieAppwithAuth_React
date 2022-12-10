@@ -6,7 +6,7 @@ import AuthComponent from './components/AuthComponent';
 import FreeComponent from './components/FreeComponent';
 import Login from './components/Login';
 import Register from './components/Register';
-// import ProtectedRoutes from './components/ProtectedRoutes';
+import ProtectedRoutes from './components/ProtectedRoutes';
 
 
 function App() {
@@ -23,9 +23,9 @@ function App() {
       <Route path='/' element={<Login/>}/>
       <Route path='/signup' element={<Register/>}/>
       <Route path='/free' element={<FreeComponent/>}/>
-      {/* <Route element={<ProtectedRoutes/>}> */}
+      <Route element={<ProtectedRoutes/>}>
         <Route path='/auth' element={<AuthComponent/>}/>
-      {/* </Route> */}
+      </Route>
     </Routes>
 
 

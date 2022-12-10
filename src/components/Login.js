@@ -29,9 +29,7 @@ export default function Login(){
     .then((result)=>{
         setLogin(true);
         // set the cookie
-        cookies.set("TOKEN", result.data.token, {
-            path: "/",
-          });
+        cookies.set("TOKEN", result.data.token, { path: "/", secure: true, sameSite: 'none'});
 
           console.log(result.data.token)
 
