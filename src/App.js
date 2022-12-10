@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+
+import { Col, Row } from 'react-bootstrap';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AuthComponent from './components/AuthComponent';
+import FreeComponent from './components/FreeComponent';
+import Login from './components/Login';
+import Register from './components/Register';
+import ProtectedRoutes from './components/ProtectedRoutes';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (<>
+      <Row><Col>
+    <h1>Your Movie App</h1>
+
+          <section id="navigation">
+            <a href="/">Login</a><a>{" "}</a>
+            <a href="/free">Free Component</a><a>{" "}</a>
+            <a href="/auth">Auth Component</a>
+          </section></Col></Row>
+    <Routes>
+      <Route path='/' element={<Login/>}/>
+      <Route path='/signup' element={<Register/>}/>
+      <Route path='/free' element={<FreeComponent/>}/>
+      {/* <Route element={<ProtectedRoutes/>}> */}
+        <Route path='/auth' element={<AuthComponent/>}/>
+      {/* </Route> */}
+    </Routes>
+
+
+    </>
   );
 }
 
