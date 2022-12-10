@@ -6,7 +6,7 @@ import AuthComponent from './components/AuthComponent';
 import FreeComponent from './components/FreeComponent';
 import Login from './components/Login';
 import Register from './components/Register';
-import ProtectedRoutes from './components/ProtectedRoutes';
+// import ProtectedRoutes from './components/ProtectedRoutes';
 
 
 function App() {
