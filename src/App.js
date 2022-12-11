@@ -7,6 +7,9 @@ import FreeComponent from './components/FreeComponent';
 import Login from './components/Login';
 import Register from './components/Register';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import Home from './pages/Home';
+import Mymovies from './pages/MyMovies';
+
 
 
 function App() {
@@ -17,8 +20,10 @@ function App() {
       <Route path='/signup' element={<Register/>}/>
       <Route path='/free' element={<FreeComponent/>}/>
       <Route element={<ProtectedRoutes/>}>
-        <Route path='/auth' element={<AuthComponent/>}/>
+        <Route path='/auth' element={<AuthComponent/>}/>        
       </Route>
+      <Route path='/home' element={<Home/>}/>
+      <Route path='/mymovies' element={<Mymovies/>}/>
     </Routes>
 
 
