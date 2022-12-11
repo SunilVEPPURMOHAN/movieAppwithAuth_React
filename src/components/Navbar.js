@@ -10,9 +10,6 @@ Login
  <Link to="/signup" style={{ padding: "10px" }}>
 Register
 </Link>
-<Link to="/free" style={{ padding: "10px" }}>
-Free
- </Link>
  <Link to="/home" style={{ padding: "10px" }}>
 Home
  </Link>
