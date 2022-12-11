@@ -16,7 +16,7 @@ export default function AuthComponent() {
         // set configurations for the API call here
         const configuration = {
           method: "get",
-          url: "https://real-flannel-shirt-bee.cyclic.app/auth-endpoint",
+          url: "https://real-flannel-shirt-bee.cyclic.app/user/auth-endpoint",
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -37,6 +37,7 @@ export default function AuthComponent() {
 const logout = () => {
     // destroy the cookie
     cookies.remove("TOKEN", { path: "/" });
+    console.log("done");
         // redirect user to the landing page
         window.location.href = "/";
   }
