@@ -2,27 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Dropdown, DropdownButton, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import Movie from "./Movie";
 import genres from "../genredata";
-import axios from "axios";
 
 
 const Movielist = (props)=>{
+  const {search, movies} = props;
+
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedValue, setSelectedValue] = useState("Sort By");
     const [genre,setGenre] = useState("All");
     const [pageitems, setPageitems] = useState([]);
-    const [movies,setMovies] = useState([])
     const [moviess,setMoviess] = useState([]);
 
-    const configuration = {
-      method: "get",
-      url: "https://real-flannel-shirt-bee.cyclic.app/movie/home",
-    };
-
-    axios(configuration)
-    .then((result)=>{
-    setMovies(result);
-      })
-    .catch((e)=>console.log(e))
+    console.log(movies);
 
     function handleSelect(eventKey) {
         // Update the selected value state with the event key
@@ -36,7 +27,7 @@ const Movielist = (props)=>{
   useEffect(()=>{
     // console.log(movies[0])
     if(genre!== "All")
-     setMoviess(movies.filter((xxx)=>xxx.genres.includes(genre)))
+     setMoviess(movies.filter((movie)=> movie.genres.includes(genre) && movie.title.includes(search)))
     else setMoviess(movies)
     if(selectedValue!== "Sort By")
         moviess.sort((a,b)=>-parseFloat(a[selectedValue])+parseFloat(b[selectedValue]));
@@ -47,7 +38,7 @@ const Movielist = (props)=>{
 
   // Slice the items array to only include the items on the current page
   setPageitems(moviess.slice(startIndex, endIndex));
-  },[selectedValue,genre,currentPage,moviess,movies])
+  },[selectedValue,genre,currentPage,moviess,movies,search])
 
     return(
         <>
