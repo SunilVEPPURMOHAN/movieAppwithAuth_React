@@ -32,7 +32,7 @@ export default function Register(){
     .then((result)=>{
         setRegister(true);
         setStatus(result.data.msg);
-        navigate("/");
+        // navigate("/");
         
         // setTimeout(4000);
     })
@@ -71,6 +71,8 @@ export default function Register(){
         <Button variant="primary" type="submit" onSubmit={(e)=>handleSubmit(e)}>
           Submit
         </Button>
+        <a href="/">Login</a>
+
          {/* display success message */}
         {register ? (
           <p className="text-success">{status}</p>

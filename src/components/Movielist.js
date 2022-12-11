@@ -13,7 +13,7 @@ const Movielist = (props)=>{
     const [pageitems, setPageitems] = useState([]);
     const [moviess,setMoviess] = useState([]);
 
-    console.log(movies);
+    // console.log(movies);
 
     function handleSelect(eventKey) {
         // Update the selected value state with the event key
