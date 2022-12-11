@@ -47,7 +47,7 @@ const Movielist = (props)=>{
 
   // Slice the items array to only include the items on the current page
   setPageitems(moviess.slice(startIndex, endIndex));
-  },[selectedValue,genre,currentPage,moviess])
+  },[selectedValue,genre,currentPage,moviess,movies])
 
     return(
         <>
