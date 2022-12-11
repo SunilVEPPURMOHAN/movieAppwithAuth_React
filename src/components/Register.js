@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row } from "react-bootstrap";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 
 export default function Register(){
@@ -12,7 +11,6 @@ export default function Register(){
   const [register, setRegister] = useState(false);
   const [status,setStatus] = useState("");
 
-  const navigate = useNavigate();
    const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();

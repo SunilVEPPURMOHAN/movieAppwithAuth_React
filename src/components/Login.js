@@ -36,8 +36,7 @@ export default function Login(){
 
           console.log(result.data)
         navigate("/home");
-           // redirect user to the auth page
-        // window.location.href = "/auth";
+           // redirect user to the home page
         // setStatus(result.data.msg);
         // setTimeout(4000);
     })
