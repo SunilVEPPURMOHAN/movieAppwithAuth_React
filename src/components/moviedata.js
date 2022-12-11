@@ -1,4 +1,3 @@
-import React from "react"
 const movies = [
     {
         "title": "Nyckeln till frihet",

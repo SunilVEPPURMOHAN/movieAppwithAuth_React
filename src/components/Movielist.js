@@ -35,7 +35,7 @@ const Movielist = (props)=>{
 
   // Slice the items array to only include the items on the current page
   setPageitems(moviess.slice(startIndex, endIndex));
-  },[selectedValue,genre,currentPage])
+  },[selectedValue,genre,currentPage,moviess])
 
     return(
         <>
@@ -48,7 +48,7 @@ const Movielist = (props)=>{
        
  <Row style={{ height: '5vh', minHeight: '5vh', width: '100%', paddingBottom:'10vh',backgroundColor:'darkblue'}}>
             <Col><h1 style={{color: "yellow", whiteSpace: "nowrap" }}>{moviess.length} Movies</h1></Col>
-            <Col>{currentPage != 1 && (
+            <Col>{currentPage !== 1 && (
         <Button onClick={() => setCurrentPage(1)} size="sm">First</Button>
       )}</Col>
       <Col >
@@ -59,7 +59,7 @@ const Movielist = (props)=>{
       {currentPage < moviess.length / itemsPerPage && (
         <Button onClick={() => setCurrentPage(currentPage + 1)} size="sm">Next</Button>
       )}</Col> 
-     <Col>{currentPage != moviess.length / itemsPerPage && (
+     <Col>{currentPage !== moviess.length / itemsPerPage && (
         <Button onClick={() => setCurrentPage(moviess.length / itemsPerPage)} size="sm">Last</Button>
       )}</Col>
       <Col style={{color:"white"}}>

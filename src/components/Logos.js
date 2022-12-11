@@ -1,6 +1,5 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-import { Icon, HouseDoor, PersonCircle } from "react-bootstrap-icons";
+import { HouseDoor, PersonCircle } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 
 const Logos = ()=>{

@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap";
+import { Col, Form, FormControl, FormGroup } from "react-bootstrap";
 
 const SearchBox = ()=>{
     return(

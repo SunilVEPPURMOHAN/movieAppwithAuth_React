@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Logos from "../components/Logos";
 import SearchBox from "../components/SearchBox";
 import Movielist from "../components/Movielist";
 
 
 const Home = () => {
-    const [search,setSearch] = useState('');
 
 return(
     <>
