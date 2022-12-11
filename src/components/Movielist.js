@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Dropdown, DropdownButton, ListGroup, ListGroupItem, Row } from "react-bootstrap";
-import movies from "../components/moviedata";
 import Movie from "./Movie";
 import genres from "../genredata";
 
@@ -10,7 +9,19 @@ const Movielist = (props)=>{
     const [selectedValue, setSelectedValue] = useState("Sort By");
     const [genre,setGenre] = useState("All");
     const [pageitems, setPageitems] = useState([]);
-    const [moviess,setMoviess] = useState(movies)
+    const [movies,setMovies] = useState([])
+    const [moviess,setMoviess] = useState([]);
+
+    const configuration = {
+      method: "get",
+      url: "https://real-flannel-shirt-bee.cyclic.app/movie/home",
+    };
+
+    axios(configuration)
+    .then((result)=>{
+    setMovies(result);
+      })
+    .catch((e)=>console.log(e))
 
     function handleSelect(eventKey) {
         // Update the selected value state with the event key
