@@ -1,6 +1,9 @@
 import React from "react";
 import { HouseDoor, LightbulbOff, PersonCircle } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const Logos = ()=>{
     const logout = ()=>{
