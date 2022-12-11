@@ -35,7 +35,7 @@ export default function Login(){
         cookies.set("TOKEN", result.data.token, { path: "/", secure: true, sameSite: 'none'});
 
           console.log(result.data)
-        navigate("/auth");
+        navigate("/home");
            // redirect user to the auth page
         // window.location.href = "/auth";
         // setStatus(result.data.msg);
