@@ -20,10 +20,11 @@ function App() {
       <Route path='/signup' element={<Register/>}/>
       <Route path='/free' element={<FreeComponent/>}/>
       <Route element={<ProtectedRoutes/>}>
-        <Route path='/auth' element={<AuthComponent/>}/>        
-      </Route>
       <Route path='/home' element={<Home/>}/>
       <Route path='/mymovies' element={<Mymovies/>}/>
+      </Route>
+      
+      
     </Routes>
 
 
