@@ -4,6 +4,7 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
+import { set } from "mongoose";
 
 const cookies = new Cookies();
 
@@ -13,6 +14,7 @@ export default function Login(){
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const [res,setRes] = useState("")
   const navigate = useNavigate();
 
    const handleSubmit = (e) => {
@@ -33,8 +35,8 @@ export default function Login(){
         setLogin(true);
         // set the cookie
         cookies.set("TOKEN", result.data.token, { path: "/", secure: true, sameSite: 'none'});
-
-          console.log(result.data)
+        
+          // console.log(result.data)
         navigate("/home");
            // redirect user to the home page
         // setStatus(result.data.msg);
