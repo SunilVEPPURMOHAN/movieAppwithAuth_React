@@ -1,34 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Dropdown, DropdownButton, ListGroup, ListGroupItem, Row } from "react-bootstrap";
+import { Button, Col, Dropdown, DropdownButton, Form, FormControl, FormGroup, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import Movie from "./Movie";
 import genres from "../genredata";
 
 
 const Movielist = (props)=>{
-  const {search, movies} = props;
+  const {movies} = props;
 
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedValue, setSelectedValue] = useState("Sort By");
     const [genre,setGenre] = useState("All");
     const [pageitems, setPageitems] = useState([]);
     const [moviess,setMoviess] = useState([]);
+    const [search,setSearch] = useState("");
+
 
     // console.log(movies);
 
     function handleSelect(eventKey) {
         // Update the selected value state with the event key
     setSelectedValue(eventKey);
-    console.log(selectedValue)
       }
 
       // Number of items to display per page
     const itemsPerPage = 20;
 
   useEffect(()=>{
-    // console.log(movies[0])
+    console.log(search)
     if(genre!== "All")
-     setMoviess(movies.filter((movie)=> movie.genres.includes(genre) && movie.title.includes(search)))
+     setMoviess(movies.filter((movie)=> movie.genres.includes(genre)))
     else setMoviess(movies)
+    setMoviess((prevState)=>prevState.filter((movie) => movie.title.includes(search)))
     if(selectedValue!== "Sort By")
         moviess.sort((a,b)=>-parseFloat(a[selectedValue])+parseFloat(b[selectedValue]));
 
@@ -42,6 +44,17 @@ const Movielist = (props)=>{
 
     return(
         <>
+        <Row style={{ height: '10vh', minHeight: '10vh', flexWrap: "wrap" , position: "fixed", top:'0', width: '100%', backgroundColor:"darkblue"}}>
+            <Form>
+        <FormGroup controlId="formBasicSearch">
+                <Col xs={10}>
+                    <FormControl type="text"
+placeholder="Enter movie title" value={search} onChange={(e)=>setSearch(e.target.value)}/>
+            </Col>
+            </FormGroup>
+            </Form>
+               </Row>
+            <Row style={{ height: '90vh', minHeight: '90vh', flexWrap: "wrap", position: "fixed", bottom:'0', width: '100%' }}>
         <Col style={{ backgroundColor: "black", width: '10vw', minWidth:'10vw' }}>
         <ListGroup>
         {genres.map((genree,index)=>(<ListGroupItem active={genre===genree} onClick={()=>setGenre(genree)}>{genree}</ListGroupItem>))}
@@ -83,6 +96,7 @@ const Movielist = (props)=>{
 
 </div>        </Row></Col>
 <Col style={{ backgroundColor: "darkblue", width:'3vw', minWidth:'3vw' }}></Col>
+</Row>
         </>
     )
 }
