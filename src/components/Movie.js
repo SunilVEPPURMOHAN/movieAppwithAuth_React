@@ -16,7 +16,7 @@ const Movie = (props)=>{
     {/* <Card.Title title={movie.title}>{movie.title} ({movie.year})</Card.Title>   */}
     <Card.Subtitle className="mb-2 text-muted" title={movie.title}>{movie.title}</Card.Subtitle>
   <Card.Text title={movie.title}>  
-   IMDB {movie.imdbRating}
+   IMDB {movie.imdbRating} | {movie.year}
     </Card.Text>
     </Card.Body> 
     </Card>
