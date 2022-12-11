@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Row, Col } from "react-bootstrap";
 import Logos from "../components/Logos";
 import SearchBox from "../components/SearchBox";
