@@ -2,7 +2,6 @@
 // import { Col, Row } from 'react-bootstrap';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import AuthComponent from './components/AuthComponent';
 import FreeComponent from './components/FreeComponent';
 import Login from './components/Login';
 import Register from './components/Register';
