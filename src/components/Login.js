@@ -13,6 +13,7 @@ export default function Login(){
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const [message,setMessage] = useState("Please key in details to login")
   const navigate = useNavigate();
 
    const handleSubmit = (e) => {
@@ -33,8 +34,8 @@ export default function Login(){
         setLogin(true);
         // set the cookie
         cookies.set("TOKEN", result.data.token, { path: "/", secure: true, sameSite: 'none'});
-        
-          // console.log(result.data)
+        setMessage("Login Sucessful");
+          console.log(result.data.token)
         navigate("/home");
            // redirect user to the home page
         // setStatus(result.data.msg);
@@ -42,14 +43,13 @@ export default function Login(){
     })
     .catch((error) => {
         setLogin(false);
-        console.log(error);
-      });
+setMessage("Please enter proper details")      });
   }
 
     return(
-        <>
+        <div>
         <Navbar/>
-        <Container>
+        <Container className="justify-content-center">
           <Row>
       <Form onSubmit={(e)=>handleSubmit(e)}>
         {/* email */}
@@ -63,25 +63,23 @@ export default function Login(){
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" name="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
         </Form.Group>
-
+      <p></p>
         {/* submit button */}
         <Button variant="primary" type="submit" onSubmit={(e)=>handleSubmit(e)}>
           Login
         </Button>
 
-<a href="/signup">Register</a>
-
       {/* display success message */}
       {login ? (
-          <p className="text-success">You Are Logged in Successfully</p>
+          <p className="text-success">{message}</p>
         ) : (
-          <p className="text-danger">You Are Not Logged in</p>
+          <p className="text-danger">{message}</p>
         )}
 
       </Form>
       </Row>
-      </Container>
-        </>
+      </Container></div>
+
     )
 
 }

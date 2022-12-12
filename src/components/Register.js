@@ -44,7 +44,7 @@ export default function Register(){
     return(
 
         <>
-        <Container>
+        <Container className="justify-content-center">
           <Row>
         <h2>Register</h2>
       <Form onSubmit={(e)=>handleSubmit(e)}>
@@ -69,7 +69,7 @@ export default function Register(){
         <Button variant="primary" type="submit" onSubmit={(e)=>handleSubmit(e)}>
           Submit
         </Button>
-        <a href="/">Login</a>
+       
 
          {/* display success message */}
         {register ? (
@@ -77,7 +77,8 @@ export default function Register(){
         ) : (
           <p className="text-danger">You Are Not Registered</p>
         )}
-
+<p></p>
+<a href="/">Login</a>
       </Form>
       </Row>
       </Container>

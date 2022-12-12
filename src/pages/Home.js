@@ -1,8 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Row, Col } from "react-bootstrap";
+import Cookies from "universal-cookie";
 import Logos from "../components/Logos";
 import Movielist from "../components/Movielist";
+
+const cookies = new Cookies();
+const token = cookies.get('TOKEN');
 
 
 const Home = () => {
@@ -11,11 +15,15 @@ const Home = () => {
     const configuration = {
         method: "get",
         url: "https://real-flannel-shirt-bee.cyclic.app/movie/home",
+        headers: {
+            Authorization: `Bearer ${token}`,
+          },
       };
 
     axios(configuration)
     .then((result)=>{
     setMovies(result.data);
+    console.log(result)
     // console.log(result.data);
       })
     .catch((e)=>console.log(e))
