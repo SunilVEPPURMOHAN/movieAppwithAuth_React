@@ -33,11 +33,9 @@ export default function Login(){
     axios(configuration)
     .then((result)=>{
         setLogin(true);
-        console.log(`Time starts now`)
         // set the cookie
         cookies.set("TOKEN", result.data.token, { path: "/", secure: true, sameSite: 'none'})
         setMessage("Login Sucessful");
-          console.log(result.data.token)
         navigate("/home");
            // redirect user to the home page
         // setStatus(result.data.msg);
