@@ -33,7 +33,7 @@ export default function Login(){
     .then((result)=>{
         setLogin(true);
         // set the cookie
-        cookies.set("TOKEN", result.data.token, { path: "/", secure: true, sameSite: 'none'});
+        cookies.set("TOKEN", result.data.token, { path: "/", secure: true, sameSite: 'none'})
         setMessage("Login Sucessful");
           console.log(result.data.token)
         navigate("/home");
