@@ -7,15 +7,16 @@ import Movielist from "../components/Movielist";
 
 const cookies = new Cookies();
 
-const token = cookies.get("TOKEN");
 
 const Mymovies = ()=>{
+    
 
     const[movies,setMovies] = useState([]);
     useEffect(()=>{
+        const token = cookies.get("TOKEN");
         const configuration = {
             method: "get",
-            url: "https://real-flannel-shirt-bee.cyclic.app/movie/mymovies",
+            url: "http://localhost:8080/movie/mymovies",
             headers: {
                 Authorization: `Bearer ${token}`
               }

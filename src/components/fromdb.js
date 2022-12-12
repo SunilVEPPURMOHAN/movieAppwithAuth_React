@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const[data,setData] = useState([])
 const configuration = {
     method: "get",
-    url: "https://real-flannel-shirt-bee.cyclic.app/movie/home",
+    url: "localhost:8080/movie/home",
   };
 
 axios(configuration)

@@ -20,9 +20,10 @@ export default function Login(){
     // prevent the form from refreshing the whole page
     e.preventDefault();
      // set configurations
+     
     const configuration = {
       method: "post",
-      url: "https://real-flannel-shirt-bee.cyclic.app/user/login",
+      url: "http://localhost:8080/user/login",
       data: {
         email:email,
         password: password
@@ -32,7 +33,7 @@ export default function Login(){
     axios(configuration)
     .then((result)=>{
         setLogin(true);
-        console.log(`Time starts now ${Date.now}`)
+        console.log(`Time starts now`)
         // set the cookie
         cookies.set("TOKEN", result.data.token, { path: "/", secure: true, sameSite: 'none'})
         setMessage("Login Sucessful");
@@ -48,6 +49,8 @@ setMessage("Please enter proper details")      });
   }
 
     return(
+
+      
         <div>
         <Navbar/>
         <Container className="justify-content-center">
