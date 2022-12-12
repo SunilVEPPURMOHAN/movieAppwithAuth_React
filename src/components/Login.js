@@ -23,7 +23,7 @@ export default function Login(){
      
     const configuration = {
       method: "post",
-      url: "http://localhost:8080/user/login",
+      url: "https://real-flannel-shirt-bee.cyclic.app/user/login",
       data: {
         email:email,
         password: password

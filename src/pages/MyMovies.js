@@ -16,7 +16,7 @@ const Mymovies = ()=>{
         const token = cookies.get("TOKEN");
         const configuration = {
             method: "get",
-            url: "http://localhost:8080/movie/mymovies",
+            url: "https://real-flannel-shirt-bee.cyclic.app/movie/mymovies",
             headers: {
                 Authorization: `Bearer ${token}`
               }
