@@ -37,8 +37,6 @@ const Mymovies = ()=>{
             <Movielist movies={movies}/>
         </Col>
         </Row>
-
-
     </>
     )
 }

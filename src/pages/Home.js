@@ -8,28 +8,32 @@ import Movielist from "../components/Movielist";
 const cookies = new Cookies();
 const token = cookies.get('TOKEN');
 
-
 const Home = () => {
     const[movies,setMovies] = useState([]);
-    useEffect(()=>{
-        const configuration = {
-            method: "get",
-            url: "https://real-flannel-shirt-bee.cyclic.app/movie/home",
-            headers: {
-                Authorization: `Bearer ${token}`
-              }
-          };
-        
-        axios(configuration)
-        .then((result)=>{
-        setMovies(result.data);
-        console.log(result)
-        // console.log(result.data);
-          })
-        .catch((e)=>console.log(e))}
-        ,[])
 
-        return(
+
+useEffect(()=>{
+    const configuration = {
+        method: "get",
+        url: "https://real-flannel-shirt-bee.cyclic.app/movie/home",
+        headers: {
+            Authorization: `Bearer ${token}`,
+          },
+      };
+    
+    axios(configuration)
+    .then((result)=>{
+    setMovies(result.data);
+    console.log(result)
+    // console.log(result.data);
+      })
+    .catch((e)=>console.log(e))}
+    ,[])
+    
+
+
+return(
+    
     <>
         <Row style={{ height: '100vh', minHeight: '100vh', flexWrap: "nowrap", overflow:'auto' }}>
         <Col style={{ backgroundColor: "lightsteelblue", width: '5vw',minWidth:'5vw', minHeight:'100vh', position:"fixed", left:'0'}}>
