@@ -13,24 +13,27 @@ const Movielist = (props)=>{
     const [pageitems, setPageitems] = useState([]);
     const [moviess,setMoviess] = useState([]);
     const [search,setSearch] = useState("");
-
+ 
+    // const moviesa = useMemo(() => movies, []);
 
     // console.log(movies);
+
 
     function handleSelect(eventKey) {
         // Update the selected value state with the event key
     setSelectedValue(eventKey);
       }
 
+
       // Number of items to display per page
     const itemsPerPage = 20;
 
   useEffect(()=>{
-    console.log(search)
+    // console.log("Hello")
     if(genre!== "All")
      setMoviess(movies.filter((movie)=> movie.genres.includes(genre)))
     else setMoviess(movies)
-    setMoviess((prevState)=>prevState.filter((movie) => movie.title.includes(search)))
+    setMoviess((prevState)=>prevState.filter((mov)=>mov.title.toLowerCase().includes(search.toLowerCase())))
     if(selectedValue!== "Sort By")
         moviess.sort((a,b)=>-parseFloat(a[selectedValue])+parseFloat(b[selectedValue]));
 
