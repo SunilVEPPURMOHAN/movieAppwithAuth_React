@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Button, Col, Dropdown, DropdownButton, Form, FormControl, FormGroup, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import Movie from "./Movie";
 import genres from "../genredata";
@@ -14,7 +14,9 @@ const Movielist = (props)=>{
     const [moviess,setMoviess] = useState([]);
     const [search,setSearch] = useState("");
  
-    // const moviesa = useMemo(() => movies, []);
+    const moviesa = useMemo(() => movies, [movies]);
+    const genrea = useMemo(()=>genre,[genre]);
+    const selectedValuea = useMemo(()=>selectedValue,[selectedValue]);
 
     // console.log(movies);
 
@@ -30,12 +32,12 @@ const Movielist = (props)=>{
 
   useEffect(()=>{
     // console.log("Hello")
-    if(genre!== "All")
-     setMoviess(movies.filter((movie)=> movie.genres.includes(genre)))
-    else setMoviess(movies)
+    if(genrea!== "All")
+     setMoviess(moviesa.filter((movie)=> movie.genres.includes(genrea)))
+    else setMoviess(moviesa)
     setMoviess((prevState)=>prevState.filter((mov)=>mov.title.toLowerCase().includes(search.toLowerCase())))
-    if(selectedValue!== "Sort By")
-        moviess.sort((a,b)=>-parseFloat(a[selectedValue])+parseFloat(b[selectedValue]));
+    if(selectedValuea!== "Sort By")
+        moviess.sort((a,b)=>-parseFloat(a[selectedValuea])+parseFloat(b[selectedValuea]));
 
      // Calculate the starting and ending indices for the current page
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -43,7 +45,14 @@ const Movielist = (props)=>{
 
   // Slice the items array to only include the items on the current page
   setPageitems(moviess.slice(startIndex, endIndex));
-  },[selectedValue,genre,currentPage,moviess,movies,search])
+  },[selectedValuea,genrea,currentPage,moviesa,search])
+
+  // useEffect(()=>{
+  //   if(genre!== "All")
+  //    setMoviess(moviesa.filter((movie)=> movie.genres.includes(genre)))
+  // }
+    
+  //   ,[genre, selectedValue]);
 
     return(
         <>
