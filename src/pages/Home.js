@@ -7,7 +7,7 @@ import Movielist from "../components/Movielist";
 
 const cookies = new Cookies();
 const token = cookies.get('TOKEN');
-
+console.log(token)
 
 const Home = () => {
     const[movies,setMovies] = useState([]);
