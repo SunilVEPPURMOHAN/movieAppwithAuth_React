@@ -8,6 +8,7 @@ import Register from './components/Register';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import Home from './pages/Home';
 import Mymovies from './pages/MyMovies';
+import AdminPage from './pages/AdminPage';
 
 
 
@@ -21,6 +22,7 @@ function App() {
       <Route element={<ProtectedRoutes/>}>
       <Route path='/home' element={<Home/>}/>
       <Route path='/mymovies' element={<Mymovies/>}/>
+      <Route path='/admin' element={<AdminPage/>}/>
       </Route>
       
       

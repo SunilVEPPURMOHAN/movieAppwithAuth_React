@@ -17,7 +17,7 @@ export default function Register(){
      // set configurations
     const configuration = {
       method: "post",
-      url: "https://real-flannel-shirt-bee.cyclic.app/user/signup",
+      url: "http://localhost:8080/user/signup",
       data: {
         email:email,
         password: password,
