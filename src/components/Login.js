@@ -26,7 +26,7 @@ export default function Login(){
 
     const configuration = {
       method: "post",
-      url: "https://real-flannel-shirt-bee.cyclic.app/user/login",
+      url: "http://localhost:8080/user/login",
       data: {
         email:email,
         password: password
@@ -49,6 +49,7 @@ export default function Login(){
         setLogin(false);
 setMessage("Please enter proper details")      });
   }
+
 
     return(
 
