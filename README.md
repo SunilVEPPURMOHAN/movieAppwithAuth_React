@@ -36,6 +36,7 @@
 2. Designing the pages. Mixing React Bootstrap and other style components.
 3. axios calls going down. Debugging the cause was time consuming.
 4. Hosting backend in *Cyclic* ; debugging was tricky
+5. CORS is a major pain
 
 
 
