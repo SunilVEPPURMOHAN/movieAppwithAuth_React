@@ -1,8 +1,9 @@
 
 const movies = require("./moviedb.json");
 
-module.exports.urla = 'http://localhost:8080' ;
+const url1 = 'http://localhost:8080';
+const url2 = 'https://dull-cyan-tadpole-yoke.cyclic.app'
 
-//https://real-flannel-shirt-bee.cyclic.app
+module.exports.urla = url2 ;
 
 module.exports.movies = movies
