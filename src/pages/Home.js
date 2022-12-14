@@ -17,7 +17,7 @@ useEffect(()=>{
 
     const configuration = {
         method: "get",
-        url: "http://localhost:8080/movie/home",
+        url: "https://real-flannel-shirt-bee.cyclic.app/movie/home",
         headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -30,7 +30,7 @@ setMoviess(movies.filter(x => x.createdBy === id))  }
     const token = cookies.get("TOKEN");
     const configuration = {
         method: "get",
-        url: "http://localhost:8080/user/isadmin",
+        url: "https://real-flannel-shirt-bee.cyclic.app/user/isadmin",
         headers: {
             Authorization: `Bearer ${token}`
           }   
@@ -48,7 +48,7 @@ const getMovieList = ()=>{
     const token = cookies.get("TOKEN");
     const configuration = {
         method: "get",
-        url: "http://localhost:8080/movie/home",
+        url: "https://real-flannel-shirt-bee.cyclic.app/movie/home",
         headers: {
             Authorization: `Bearer ${token}`
           }
@@ -68,7 +68,7 @@ const getUserList = ()=>{
 
     const configuration = {
         method: "get",
-        url: "http://localhost:8080/user",
+        url: "https://real-flannel-shirt-bee.cyclic.app/user",
         headers: {
             Authorization: `Bearer ${token}`
           }};
@@ -83,7 +83,7 @@ const getUserList = ()=>{
     const token = cookies.get("TOKEN");
     const configuration = {
         method: "delete",
-        url: `http://localhost:8080/user/${e.target.id}`,
+        url: `https://real-flannel-shirt-bee.cyclic.app/user/${e.target.id}`,
         headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -103,7 +103,7 @@ const getUserList = ()=>{
     const token = cookies.get("TOKEN");
     const configuration = {
         method: "put",
-        url:`http://localhost:8080/user/makeadmin`,
+        url:`https://real-flannel-shirt-bee.cyclic.app/user/makeadmin`,
         headers:{
             Authorization: `Bearer ${token}`,
         },
