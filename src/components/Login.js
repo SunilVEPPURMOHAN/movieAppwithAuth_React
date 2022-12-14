@@ -36,6 +36,7 @@ export default function Login(){
     axios(configuration)
     .then((result)=>{
         setLogin(true);
+        console.log(result);
         // set the cookie
         cookies.set("TOKEN", result.data.token, { path: "/", secure: true, sameSite: 'none'})
         setMessage("Login Sucessful");
