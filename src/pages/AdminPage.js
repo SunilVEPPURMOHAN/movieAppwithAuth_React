@@ -4,6 +4,7 @@ import { Button, Col, Row } from 'react-bootstrap';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 import Logos from '../components/Logos';
+import { urla } from '../components/fromdb';
 
 const cookies = new Cookies();
 
@@ -30,7 +31,7 @@ setMoviess(movies.filter(x => x.createdBy === id))  }
     const token = cookies.get("TOKEN");
     const configuration = {
         method: "get",
-        url: "https://real-flannel-shirt-bee.cyclic.app/user/isadmin",
+        url: urla + "/user/isadmin",
         headers: {
             Authorization: `Bearer ${token}`
           }   
@@ -48,7 +49,7 @@ const getMovieList = ()=>{
     const token = cookies.get("TOKEN");
     const configuration = {
         method: "get",
-        url: "https://real-flannel-shirt-bee.cyclic.app/movie/home",
+        url: urla + "/movie/home",
         headers: {
             Authorization: `Bearer ${token}`
           }
@@ -68,7 +69,7 @@ const getUserList = ()=>{
 
     const configuration = {
         method: "get",
-        url: "https://real-flannel-shirt-bee.cyclic.app/user",
+        url: urla + "/user",
         headers: {
             Authorization: `Bearer ${token}`
           }};
@@ -83,7 +84,7 @@ const getUserList = ()=>{
     const token = cookies.get("TOKEN");
     const configuration = {
         method: "delete",
-        url: `https://real-flannel-shirt-bee.cyclic.app/user/${e.target.id}`,
+        url: `${urla}/user/${e.target.id}`,
         headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -103,7 +104,7 @@ const getUserList = ()=>{
     const token = cookies.get("TOKEN");
     const configuration = {
         method: "put",
-        url:`https://real-flannel-shirt-bee.cyclic.app/user/makeadmin`,
+        url:`${urla}/user/makeadmin`,
         headers:{
             Authorization: `Bearer ${token}`,
         },

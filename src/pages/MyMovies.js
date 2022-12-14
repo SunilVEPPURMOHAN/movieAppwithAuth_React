@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Cookies from "universal-cookie";
+import { urla } from "../components/fromdb";
 import Logos from "../components/Logos";
 import Movielist from "../components/Movielist";
 
@@ -16,7 +17,7 @@ const Mymovies = ()=>{
         const token = cookies.get("TOKEN");
         const configuration = {
             method: "get",
-            url: "https://real-flannel-shirt-bee.cyclic.app/movie/mymovies",
+            url: urla + "/movie/mymovies",
             headers: {
                 Authorization: `Bearer ${token}`
               }

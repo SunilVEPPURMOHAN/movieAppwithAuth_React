@@ -4,8 +4,10 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
+import { urla } from "./fromdb";
 
 const cookies = new Cookies();
+
 
 
 export default function Login(){
@@ -26,7 +28,7 @@ export default function Login(){
 
     const configuration = {
       method: "post",
-      url: "http://localhost:8080/user/login",
+      url:  urla + "/user/login",
       data: {
         email:email,
         password: password

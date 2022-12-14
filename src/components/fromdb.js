@@ -1,4 +1,8 @@
 
 const movies = require("./moviedb.json");
 
-export default movies
+module.exports.urla = 'http://localhost:8080' ;
+
+//https://real-flannel-shirt-bee.cyclic.app
+
+module.exports.movies = movies

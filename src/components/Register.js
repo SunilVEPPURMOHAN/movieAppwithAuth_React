@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row } from "react-bootstrap";
 import axios from "axios";
+import { urla } from "./fromdb";
 
 
 export default function Register(){
@@ -17,7 +18,7 @@ export default function Register(){
      // set configurations
     const configuration = {
       method: "post",
-      url: "https://real-flannel-shirt-bee.cyclic.app/user/signup",
+      url: urla + "/user/signup",
       data: {
         email:email,
         password: password,
@@ -31,7 +32,6 @@ export default function Register(){
         setRegister(true);
         setStatus(result.data.msg);
         // navigate("/");
-        
         // setTimeout(4000);
     })
     .catch((error) => {

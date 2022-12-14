@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import Cookies from "universal-cookie";
+import { urla } from "../components/fromdb";
 import Logos from "../components/Logos";
 import Movielist from "../components/Movielist";
 
@@ -17,7 +18,7 @@ useEffect(()=>{
 
     const configuration = {
         method: "get",
-        url: "https://real-flannel-shirt-bee.cyclic.app/movie/home",
+        url: urla + "/movie/home",
         headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -26,7 +27,7 @@ useEffect(()=>{
     axios(configuration)
     .then((result)=>{
     setMovies(result.data);
-    console.log(result)
+    // console.log(result)
     // console.log(result.data);
       })
     .catch((e)=>console.log(e))}
