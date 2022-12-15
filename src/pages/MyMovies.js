@@ -11,8 +11,8 @@ const cookies = new Cookies();
 
 const Mymovies = ()=>{
     
-
     const[movies,setMovies] = useState([]);
+
     useEffect(()=>{
         const token = cookies.get("TOKEN");
         const configuration = {
@@ -36,7 +36,7 @@ const Mymovies = ()=>{
         <Col style={{ backgroundColor: "lightsteelblue", width: '5vw',minWidth:'5vw', minHeight:'100vh', position:"fixed", left:'0'}}>
         <Logos/></Col>
         <Col style={{ backgroundColor: "darkblue", width:'95vw', minWidth:'95vw', position:'fixed', left:'5vw'}}>
-            <Movielist movies={movies}/>
+            <Movielist movies={movies} personal={true}/>
         </Col>
         </Row>
     </>

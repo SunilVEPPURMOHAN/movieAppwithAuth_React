@@ -9,6 +9,7 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 import Home from './pages/Home';
 import Mymovies from './pages/MyMovies';
 import AdminPage from './pages/AdminPage';
+import AddMovie from './pages/AddMovie';
 
 
 
@@ -23,6 +24,7 @@ function App() {
       <Route path='/home' element={<Home/>}/>
       <Route path='/mymovies' element={<Mymovies/>}/>
       <Route path='/admin' element={<AdminPage/>}/>
+      <Route path='addmovies' element={<AddMovie/>}/>
       </Route>
       
       

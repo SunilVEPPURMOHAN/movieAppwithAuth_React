@@ -49,7 +49,7 @@ export default function Login(){
     })
     .catch((error) => {
         setLogin(false);
-setMessage("Please enter proper details")      });
+setMessage("Your details are incorrect")      });
   }
 
 

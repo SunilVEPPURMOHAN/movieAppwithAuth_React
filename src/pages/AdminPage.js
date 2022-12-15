@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import user from './user';
 import { Button, Col, Row } from 'react-bootstrap';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
@@ -11,7 +10,7 @@ const cookies = new Cookies();
 const AdminPage = () => {
 
 const[admin,setAdmin] = useState(true);
-const [users,setUsers] = useState(user);
+const [users,setUsers] = useState([]);
 const [expandedItem, setExpandedItem] = useState(null);
 const [movies,setMovies] = useState([]);
 const [moviess,setMoviess] = useState([]);
